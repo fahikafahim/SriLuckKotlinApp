@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "608521782784",
+    "project_id": "sriluck-6a2de",
+    "storage_bucket": "sriluck-6a2de.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:608521782784:android:b98210408354d82c1e7ae5",
+        "android_client_info": {
+          "package_name": "com.example.sri_luck"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCROs2DegM59PuYWM-OoIZQKxai5TLivUw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

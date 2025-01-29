@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">Sri_Luck</string>
+    <string name="notifications">Notifications</string>
+    <string name="favorites">Favorites</string>
+    <string name="shop_now">Shop Now</string>
+    <string name="categories">Categories</string>
+    <string name="recommended">Recommended</string>
+    <string name="banner_text">Discount 50% for the first transaction</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="cart">Cart</string>
+    <string name="profile">Profile</string>
+    <string name="leather_men_footwear">Leather Men Footwear</string>
+    <string name="leather_footwear">Leather Footwear</string>
+    <string name="price_format">$%1$s</string>
+    <string name="women_category">Women</string>
+    <string name="men_category">Men</string>
+    <string name="children_category">Children</string>
+
+
+
+
+    <!-- Men Products -->
+    <string name="men_shoes1">Men\'s Shoes 1</string>
+    <string name="men_shoes2">Men\'s Shoes 2</string>
+    <string name="men_shoes3">Men\'s Shoes 3</string>
+    <string name="men_shoes4">Men\'s Shoes 4</string>
+    <string name="men_shoes5">Men\'s Shoes 5</string>
+    <string name="men_shoes6">Men\'s Shoes 6</string>
+    <string name="men_shoes7">Men\'s Shoes 7</string>
+    <string name="men_shoes8">Men\'s Shoes 8</string>
+    <string name="men_shoes9">Men\'s Shoes 9</string>
+    <string name="men_shoes10">Men\'s Shoes 10</string>
+
+    <!-- Women Products -->
+    <string name="women_shoes1">Women\'s Shoes 1</string>
+    <string name="women_shoes2">Women\'s Shoes 2</string>
+    <string name="women_shoes3">Women\'s Shoes 3</string>
+    <string name="women_shoes4">Women\'s Shoes 4</string>
+    <string name="women_shoes5">Women\'s Shoes 5</string>
+    <string name="women_shoes6">Women\'s Shoes 6</string>
+    <string name="women_shoes7">Women\'s Shoes 7</string>
+    <string name="women_shoes8">Women\'s Shoes 8</string>
+    <string name="women_shoes9">Women\'s Shoes 9</string>
+    <string name="women_shoes10">Women\'s Shoes 10</string>
+
+    <!-- Kids Products -->
+    <string name="kids_shoes1">Kids\' Shoes 1</string>
+    <string name="kids_shoes2">Kids\' Shoes 2</string>
+    <string name="kids_shoes3">Kids\' Shoes 3</string>
+    <string name="kids_shoes4">Kids\' Shoes 4</string>
+    <string name="kids_shoes5">Kids\' Shoes 5</string>
+    <string name="kids_shoes6">Kids\' Shoes 6</string>
+    <string name="kids_shoes7">Kids\' Shoes 7</string>
+    <string name="kids_shoes8">Kids\' Shoes 8</string>
+    <string name="kids_shoes9">Kids\' Shoes 9</string>
+    <string name="kids_shoes10">Kids\' Shoes 10</string>
+</resources>
