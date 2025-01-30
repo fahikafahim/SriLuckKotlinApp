@@ -28,31 +28,38 @@ import com.example.sri_luck.DataClasses.Product
 import com.example.sri_luck.DataSource.HomeDataSource
 import com.example.sri_luck.R
 
-
-
-
-// Main layout of the home page, including top bar, banner, categories, recommendations, and bottom navigation
 @Composable
 fun HomePage(
     navController: NavController
 ) {
+    // Main column layout for the home page
     Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(horizontal = 16.dp)
     ) {
+        // Displays the top navigation bar
         TopNavBar()
+
+        // Displays the banner section
         BannerSection()
+
+        // Displays category section
         CategorySection(navController = navController)
+
+        // Displays the recommended products section
         Column(
             modifier = Modifier.weight(1f)
         ) {
             RecommendedSection()
         }
+
+        // Displays the bottom navigation bar
         BottomNavBar(navController = navController)
     }
 }
 
+// Define custom colors for the UI
 val LightBrown = Color(0xFFD6C0B3)
 val DarkBrown = Color(0xFF493628)
 val WarmBrown = Color(0xFFAB886D)
@@ -89,7 +96,8 @@ fun TopNavBar() {
         }
     }
 }
-// Banner with discount message and button
+
+// Banner section with discount message and button
 @Composable
 fun BannerSection() {
     Row(
@@ -128,7 +136,8 @@ fun BannerSection() {
         )
     }
 }
-// Displays a grid of categories loaded from a data source
+
+// Displays the category section with a grid layout
 @Composable
 fun CategorySection(navController: NavController) {
     val homeDataSource = HomeDataSource()
@@ -157,7 +166,7 @@ fun CategorySection(navController: NavController) {
     }
 }
 
-// Displays a single category item with an image and label, navigates to the category's route on click
+// Individual Category item section
 @Composable
 fun CategoryItem(category: Category, navController: NavController) {
     Column(
@@ -185,6 +194,7 @@ fun CategoryItem(category: Category, navController: NavController) {
         )
     }
 }
+
 // Displays a grid of recommended products loaded from a data source
 @Composable
 fun RecommendedSection() {
@@ -212,7 +222,8 @@ fun RecommendedSection() {
         }
     }
 }
-// Displays a single product card with an image, name, and price, triggers an action on click
+
+// Displays an individual product card
 @Composable
 fun ProductCard(product: Product, onClick: () -> Unit = {}) {
     Card(
@@ -226,7 +237,6 @@ fun ProductCard(product: Product, onClick: () -> Unit = {}) {
         Column(
             modifier = Modifier.padding(8.dp)
         ) {
-
             Image(
                 painter = painterResource(id = product.imageResourceId),
                 contentDescription = stringResource(id = product.nameResourceId),

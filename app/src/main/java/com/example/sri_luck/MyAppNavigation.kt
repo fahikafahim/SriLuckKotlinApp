@@ -17,44 +17,56 @@ import com.example.sri_luck.pages.WomenCategoryScreen
 
 @Composable
 fun MyAppNavigation(modifier: Modifier = Modifier, authViewModel: AuthViewModel) {
-   val navController = rememberNavController()
+   val navController = rememberNavController() // Navigation controller
 
+   // Define the navigation host and routes
    NavHost(navController = navController, startDestination = "splash") {
+
+      // Splash Screen Route
       composable("splash") {
          SplashScreen(navController)
       }
+
+      // Login Screen Route
       composable("login") {
          LoginPage(navController)
       }
+
+      // Home Screen Route
       composable("home") {
          HomePage(navController)
       }
+
+      // Signup Screen Route
       composable("signup") {
          SignupPage(navController)
       }
+
+      // Cart Page Route
       composable("cart") {
          CartPage(navController)
       }
+
+      // Profile Page Route
       composable("profile") {
          ProfilePage(navController)
       }
+
+      // Category Pages Routes
       composable("women") { WomenCategoryScreen(navController) }
       composable("men") { MenCategoryScreen(navController) }
       composable("kids") { KidsCategoryScreen(navController) }
-      composable(
-         "productDetail/{nameResourceId}/{price}/{imageResourceId}"
-      ) { backStackEntry ->
-         val nameResourceId = backStackEntry.arguments?.getString("nameResourceId")?.toInt()
-         val price = backStackEntry.arguments?.getString("price")?.toInt()
-         val imageResourceId = backStackEntry.arguments?.getString("imageResourceId")?.toInt()
 
-         if (nameResourceId != null && price != null && imageResourceId != null) {
-            ProductDetailPage(
-               nameResourceId = nameResourceId,
-               price = price,
-               imageResourceId = imageResourceId,
-               navController = navController
-            )
+      // Product Detail Page Route with dynamic parameters
+      composable("productDetail/{nameResourceId}/{price}/{imageResourceId}") { backStackEntry ->
+         backStackEntry.arguments?.let { args ->
+            val nameResourceId = args.getString("nameResourceId")?.toIntOrNull()
+            val price = args.getString("price")?.toIntOrNull()
+            val imageResourceId = args.getString("imageResourceId")?.toIntOrNull()
+
+            if (nameResourceId != null && price != null && imageResourceId != null) {
+               ProductDetailPage(nameResourceId, price, imageResourceId, navController)
+            }
          }
       }
    }

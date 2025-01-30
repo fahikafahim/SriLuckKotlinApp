@@ -17,27 +17,26 @@ import androidx.navigation.NavController
 import com.example.sri_luck.R
 import androidx.compose.material3.OutlinedTextField
 
-
-
 @Composable
 fun LoginPage(
-
     navController: NavController
 ) {
-
+    // State variables for user input
     var username by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
     Box(
-        modifier = Modifier
-            .fillMaxSize()
+        modifier = Modifier.fillMaxSize()
     ) {
+        // Background Image
         Image(
             painter = painterResource(id = R.drawable.login2),
             contentDescription = "Background",
             contentScale = ContentScale.Crop,
             modifier = Modifier.fillMaxSize()
         )
+
+        // Main Content Column
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -45,6 +44,7 @@ fun LoginPage(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            // Login Card Box
             Box(
                 modifier = Modifier
                     .fillMaxWidth(0.9f)
@@ -56,6 +56,7 @@ fun LoginPage(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
+                    // Login Title
                     Text(
                         text = "Login to Continue",
                         fontSize = 20.sp,
@@ -63,16 +64,17 @@ fun LoginPage(
                         modifier = Modifier.padding(bottom = 16.dp)
                     )
 
+                    // Username Input Field
                     OutlinedTextField(
                         value = username,
                         onValueChange = { username = it },
                         label = { Text(text = "User Name") },
                         modifier = Modifier.fillMaxWidth()
-
                     )
 
                     Spacer(modifier = Modifier.height(7.dp))
 
+                    // Password Input Field
                     OutlinedTextField(
                         value = password,
                         onValueChange = { password = it },
@@ -82,6 +84,7 @@ fun LoginPage(
 
                     Spacer(modifier = Modifier.height(16.dp))
 
+                    // Login Button
                     Button(
                         onClick = { navController.navigate("home") },
                         colors = ButtonDefaults.buttonColors(
@@ -97,6 +100,7 @@ fun LoginPage(
 
                     Spacer(modifier = Modifier.height(16.dp))
 
+                    // Signup Navigation Button
                     TextButton(
                         onClick = {
                             navController.navigate("signup")

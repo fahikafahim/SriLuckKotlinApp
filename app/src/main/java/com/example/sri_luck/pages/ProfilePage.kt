@@ -207,7 +207,7 @@ fun ChangePasswordForm(onBackClick: () -> Unit) {
             .fillMaxWidth()
             .padding(horizontal = 40.dp, vertical = 16.dp)
     ) {
-                // Row with Arrow and "Change Password" Text
+
         Row(
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier.padding(bottom = 16.dp)
@@ -232,10 +232,10 @@ fun ChangePasswordForm(onBackClick: () -> Unit) {
             )
         }
 
-        // New Password Text Field
+
         var newPassword by remember { mutableStateOf("") }
 
-        // New Password Input Field
+
         TextField(
             value = newPassword,
             onValueChange = { newPassword = it },
@@ -246,7 +246,7 @@ fun ChangePasswordForm(onBackClick: () -> Unit) {
                 .padding(bottom = 16.dp)
         )
 
-        // Button to submit password change (dummy button)
+
         Button(
             onClick = { /* Handle password change */ },
             modifier = Modifier.fillMaxWidth(),
@@ -266,7 +266,7 @@ fun UpdateEmailForm(onBackClick: () -> Unit) {
             .fillMaxWidth()
             .padding(horizontal = 40.dp, vertical = 16.dp)
     ) {
-        // Row with Arrow and "Update Email Address" Text
+
         Row(
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier.padding(bottom = 16.dp)
@@ -291,7 +291,7 @@ fun UpdateEmailForm(onBackClick: () -> Unit) {
             )
         }
 
-        // New Email Text Field
+
         var newEmail by remember { mutableStateOf("") }
 
         TextField(
@@ -303,7 +303,7 @@ fun UpdateEmailForm(onBackClick: () -> Unit) {
                 .padding(bottom = 16.dp)
         )
 
-        // Button to submit email update (dummy button)
+
         Button(
             onClick = { /* Handle email update */ },
             modifier = Modifier.fillMaxWidth(),

@@ -1,6 +1,4 @@
-
 package com.example.sri_luck.pages
-
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -19,12 +17,11 @@ import androidx.navigation.NavController
 import com.example.sri_luck.R
 import androidx.compose.material3.OutlinedTextField
 
-
-
 @Composable
 fun SignupPage(
     navController: NavController
 ) {
+    // State variables for user input
     var username by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
@@ -32,7 +29,7 @@ fun SignupPage(
     Box(
         modifier = Modifier.fillMaxSize()
     ) {
-
+        // Background Image
         Image(
             painter = painterResource(id = R.drawable.register2),
             contentDescription = "Background",
@@ -40,7 +37,7 @@ fun SignupPage(
             modifier = Modifier.fillMaxSize()
         )
 
-
+        // Main Content Column
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -48,6 +45,7 @@ fun SignupPage(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            // Signup Card Box
             Box(
                 modifier = Modifier
                     .fillMaxWidth(0.9f)
@@ -59,7 +57,7 @@ fun SignupPage(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-
+                    // Signup Title
                     Text(
                         text = "Signup to Continue",
                         fontSize = 20.sp,
@@ -67,16 +65,17 @@ fun SignupPage(
                         modifier = Modifier.padding(bottom = 8.dp)
                     )
 
+                    // Username Input Field
                     OutlinedTextField(
                         value = username,
                         onValueChange = { username = it },
                         label = { Text(text = "User Name") },
                         modifier = Modifier.fillMaxWidth()
-
                     )
 
                     Spacer(modifier = Modifier.height(7.dp))
 
+                    // Email Input Field
                     OutlinedTextField(
                         value = email,
                         onValueChange = { email = it },
@@ -86,6 +85,7 @@ fun SignupPage(
 
                     Spacer(modifier = Modifier.height(7.dp))
 
+                    // Password Input Field
                     OutlinedTextField(
                         value = password,
                         onValueChange = { password = it },
@@ -95,6 +95,7 @@ fun SignupPage(
 
                     Spacer(modifier = Modifier.height(16.dp))
 
+                    // Signup Button
                     Button(
                         onClick = { navController.navigate("home") },
                         colors = ButtonDefaults.buttonColors(
@@ -110,6 +111,7 @@ fun SignupPage(
 
                     Spacer(modifier = Modifier.height(16.dp))
 
+                    // Login Navigation Button
                     TextButton(
                         onClick = {
                             navController.navigate("login")
