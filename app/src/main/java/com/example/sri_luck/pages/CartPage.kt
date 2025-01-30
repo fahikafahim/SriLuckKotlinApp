@@ -22,7 +22,6 @@ import com.example.sri_luck.ui.theme.Sri_LuckTheme
 
 @Composable
 fun CartPage(navController: NavController) {
-    // Main layout for the cart page
     Sri_LuckTheme {
         Surface(
             modifier = Modifier
@@ -41,50 +40,26 @@ fun CartPage(navController: NavController) {
                         color = MaterialTheme.colorScheme.onBackground,
                         modifier = Modifier.padding(top = 20.dp, bottom = 16.dp)
                     )
-
-                    // Product list
+                    // Updated product list
                     Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
                         CartItem(
-                            imageRes = R.drawable.w2,
-                            name = "Classic Sneakers",
-                            price = "$120.00",
-                            details = "Size: 42 • Black"
+                            imageRes = R.drawable.w1,
+                            name = "Women Sandal",
+                            price = "Rs. 1250",
+                            details = "Color: Pink"
                         )
                         CartItem(
-                            imageRes = R.drawable.p2,
-                            name = "Leather Sandals",
-                            price = "$85.00",
-                            details = "Size: 40 • Brown"
+                            imageRes = R.drawable.m1,
+                            name = "Men Sandal",
+                            price = "Rs. 2250",
+                            details = "Color: Black"
                         )
-                    }
-
-                    // Promo code input
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(vertical = 16.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        TextField(
-                            value = "",
-                            onValueChange = {},
-                            placeholder = { Text("Promo Code") },
-                            modifier = Modifier
-                                .weight(1f)
-                                .clip(RoundedCornerShape(8.dp))
+                        CartItem(
+                            imageRes = R.drawable.k3,
+                            name = "Kids Sandal",
+                            price = "Rs. 1200",
+                            details = "Color: Black"
                         )
-                        Button(
-                            onClick = {},
-                            modifier = Modifier
-                                .height(56.dp)
-                                .padding(start = 8.dp),
-                            colors = ButtonDefaults.buttonColors(
-                                containerColor = MaterialTheme.colorScheme.secondary,
-                                contentColor = MaterialTheme.colorScheme.onSecondary
-                            )
-                        ) {
-                            Text("Apply")
-                        }
                     }
 
                     // Summary section
@@ -94,14 +69,14 @@ fun CartPage(navController: NavController) {
                             .fillMaxWidth()
                             .padding(vertical = 16.dp)
                     ) {
-                        SummaryRow(label = "Cart Total", value = "$205.00")
-                        SummaryRow(label = "Tax", value = "$5.00")
-                        SummaryRow(label = "Delivery", value = "$4.99")
-                        SummaryRow(label = "Promo Discount", value = "-$0.00")
+                        SummaryRow(label = "Cart Total", value = "Rs. 4700")
+                        SummaryRow(label = "Tax", value = "Rs. 100")
+                        SummaryRow(label = "Delivery", value = "Rs. 500")
+                        SummaryRow(label = "Promo Discount", value = "-Rs. 0")
                         Divider(thickness = 1.dp, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.12f))
                         SummaryRow(
                             label = "Subtotal",
-                            value = "$214.99",
+                            value = "Rs. 5300",
                             textStyle = TextStyle(
                                 fontSize = 16.sp,
                                 fontWeight = FontWeight.Bold,
@@ -134,12 +109,24 @@ fun CartPage(navController: NavController) {
 
 @Composable
 fun CartItem(imageRes: Int, name: String, price: String, details: String) {
-    // Layout for individual cart item
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 8.dp)
+            .padding(vertical = 8.dp),
+        verticalAlignment = Alignment.CenterVertically
     ) {
+        IconButton(
+            onClick = { /* Remove item */ },
+            modifier = Modifier
+                .size(24.dp)
+                .padding(4.dp)
+        ) {
+            Icon(
+                painter = painterResource(id = R.drawable.re),
+                contentDescription = "Remove Item",
+                tint = MaterialTheme.colorScheme.error
+            )
+        }
         Image(
             painter = painterResource(id = imageRes),
             contentDescription = name,
@@ -171,12 +158,13 @@ fun CartItem(imageRes: Int, name: String, price: String, details: String) {
                 color = MaterialTheme.colorScheme.onBackground
             )
         }
+        Spacer(modifier = Modifier.width(8.dp))
+
     }
 }
 
 @Composable
 fun SummaryRow(label: String, value: String, textStyle: TextStyle = TextStyle.Default) {
-    // Layout for summary rows
     Row(
         modifier = Modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceBetween,

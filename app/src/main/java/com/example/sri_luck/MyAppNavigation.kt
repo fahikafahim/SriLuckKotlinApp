@@ -16,12 +16,16 @@ import com.example.sri_luck.pages.ProductDetailPage
 import com.example.sri_luck.pages.WomenCategoryScreen
 
 @Composable
-fun MyAppNavigation(modifier: Modifier = Modifier,authViewModel: AuthViewModel){
+fun MyAppNavigation(modifier: Modifier = Modifier, authViewModel: AuthViewModel) {
    val navController = rememberNavController()
-   NavHost(navController = navController , startDestination = "login" , builder = {
-          composable("login") {
-             LoginPage(navController)
-          }
+
+   NavHost(navController = navController, startDestination = "splash") {
+      composable("splash") {
+         SplashScreen(navController)
+      }
+      composable("login") {
+         LoginPage(navController)
+      }
       composable("home") {
          HomePage(navController)
       }
@@ -29,14 +33,11 @@ fun MyAppNavigation(modifier: Modifier = Modifier,authViewModel: AuthViewModel){
          SignupPage(navController)
       }
       composable("cart") {
-         CartPage(navController = navController)
+         CartPage(navController)
       }
       composable("profile") {
-         ProfilePage(navController = navController)
+         ProfilePage(navController)
       }
-
-
-      // Add routes for category pages
       composable("women") { WomenCategoryScreen(navController) }
       composable("men") { MenCategoryScreen(navController) }
       composable("kids") { KidsCategoryScreen(navController) }
@@ -56,9 +57,5 @@ fun MyAppNavigation(modifier: Modifier = Modifier,authViewModel: AuthViewModel){
             )
          }
       }
-
-
-
-   })
+   }
 }
-
